@@ -1,5 +1,6 @@
 {
   "name": "skidpad",
+  "description": "Drift events calendar around the world",
   "version": "0.1.0",
   "private": true,
   "scripts": {
