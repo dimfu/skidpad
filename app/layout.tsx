@@ -1,18 +1,18 @@
-import "./globals.css";
+import './globals.css'
 
 export const metadata = {
-  title: "Skidpad",
-  description: "Drift events calendar around the world",
-};
+  title: 'Skidpad',
+  description: 'Drift events calendar around the world',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
       <body>{children}</body>
     </html>
-  );
+  )
 }
