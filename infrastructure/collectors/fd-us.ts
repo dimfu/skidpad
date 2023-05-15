@@ -62,5 +62,3 @@ export default async function fdUs() {
 
   fs.writeFileSync(path.resolve(__dirname, '../../_data/fd-us.json'), JSON.stringify(events))
 }
-
-fdUs()
