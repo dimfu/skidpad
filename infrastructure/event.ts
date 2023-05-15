@@ -5,7 +5,7 @@ export interface Event {
   startDate: string
   url: string
   schedule?: {
-    id: number
+    id: string
     content: {
       time: string
       program: string
