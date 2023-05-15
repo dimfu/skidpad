@@ -8,9 +8,11 @@ specifiers:
   autoprefixer: 10.4.14
   chalk: ^5.2.0
   cheerio: 1.0.0-rc.12
+  dotenv: ^16.0.3
   eslint: 8.40.0
   eslint-config-next: 13.4.2
   lint-staged: ^13.2.2
+  moment-timezone: ^0.5.43
   next: 13.4.2
   ora: ^6.3.0
   postcss: 8.4.23
@@ -27,6 +29,7 @@ dependencies:
   autoprefixer: 10.4.14_postcss@8.4.23
   eslint: 8.40.0
   eslint-config-next: 13.4.2_3qfatcekpgbllh6uk5ivyhkbxq
+  moment-timezone: 0.5.43
   next: 13.4.2_biqbaboplfbrettd7655fr4n2y
   postcss: 8.4.23
   react: 18.2.0
@@ -38,6 +41,7 @@ devDependencies:
   '@antfu/eslint-config': 0.38.6_3qfatcekpgbllh6uk5ivyhkbxq
   chalk: 5.2.0
   cheerio: 1.0.0-rc.12
+  dotenv: 16.0.3
   lint-staged: 13.2.2
   ora: 6.3.0
   simple-git-hooks: 2.8.1
@@ -1188,6 +1192,11 @@ packages:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
       domhandler: 5.0.3
+    dev: true
+
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
     dev: true
 
   /eastasianwidth/0.2.0:
@@ -2681,6 +2690,16 @@ packages:
 
   /minimist/1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
+
+  /moment-timezone/0.5.43:
+    resolution: {integrity: sha512-72j3aNyuIsDxdF1i7CEgV2FfxM1r6aaqJyLB2vwb33mXYyoyLly+F1zbWqhA3/bVIoJ4szlUoMbUnVdid32NUQ==}
+    dependencies:
+      moment: 2.29.4
+    dev: false
+
+  /moment/2.29.4:
+    resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
+    dev: false
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
