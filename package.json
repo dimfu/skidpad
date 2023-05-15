@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "fetch-events": "ts-node ./infrastructure/fetch-events.ts"
   },
   "dependencies": {
     "@types/node": "20.1.4",
@@ -27,11 +28,11 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.6",
-    "chalk": "^5.2.0",
+    "chalk": "^4.1.1",
     "cheerio": "1.0.0-rc.12",
     "dotenv": "^16.0.3",
     "lint-staged": "^13.2.2",
-    "ora": "^6.3.0",
+    "ora": "^5.4.1",
     "simple-git-hooks": "^2.8.1"
   },
   "simple-git-hooks": {
