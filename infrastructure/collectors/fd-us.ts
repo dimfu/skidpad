@@ -36,7 +36,7 @@ export default async function fdUs() {
         const program = $$(tr).find('td:last-child').text().trim()
         return { time, program }
       }).get()
-      return { id: _.toString(), content }
+      return { started_at: _.toString(), content }
     }).get()
 
     // Get the first program time for each day and format to ISO
@@ -54,7 +54,7 @@ export default async function fdUs() {
       startDate: formatStartTimes[0],
       url,
       schedule: schedules.map((schedule, index) => {
-        return { ...schedule, id: formatStartTimes[index] }
+        return { ...schedule, started_at: formatStartTimes[index] }
       }),
     }
   }).get(),
