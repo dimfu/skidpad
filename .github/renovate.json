@@ -23,5 +23,6 @@
     "rangeStrategy": "bump"
   },
   "separateMultipleMajor": true,
-  "separateMajorMinor": true
+  "separateMajorMinor": true,
+  "ignoreDeps": ["chalk", "ora"]
 }
