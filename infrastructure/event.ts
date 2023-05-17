@@ -1,4 +1,5 @@
 export interface Event {
+  slug: string
   name: string
   location: string
   round: string

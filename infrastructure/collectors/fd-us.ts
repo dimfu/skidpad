@@ -47,6 +47,7 @@ export default async function fdUs() {
     })
 
     return {
+      slug: 'fd-us',
       name,
       location,
       round,

@@ -62,6 +62,7 @@ export default async function dmec() {
         })
 
         resolve({
+          slug: 'dmec',
           name,
           location,
           round,
