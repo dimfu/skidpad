@@ -2,6 +2,7 @@ import chalk from 'chalk'
 import ora from 'ora'
 
 import fdUs from './collectors/fd-us'
+import dmec from './collectors/dmec'
 
 function toSecond(hrtime: [number, number]): string {
   return (hrtime[0] + hrtime[1] / 1e9).toFixed(3)
@@ -14,5 +15,10 @@ function toSecond(hrtime: [number, number]): string {
   fdUs().then(() => {
     const end = `${toSecond(process.hrtime(start))} seconds`
     spinner.succeed(`Fetching Formula Drift (USA) done in ${chalk.greenBright(end)}`)
+  }).catch(err => chalk.red(err))
+
+  dmec().then(() => {
+    const end = `${toSecond(process.hrtime(start))} seconds`
+    spinner.succeed(`Fetching Drift Masters EU Championship done in ${chalk.greenBright(end)}`)
   }).catch(err => chalk.red(err))
 })()
