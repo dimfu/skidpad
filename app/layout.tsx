@@ -1,4 +1,8 @@
 import './globals.css'
+import { Inter } from 'next/font/google'
+import clsx from 'clsx'
+
+const inter = Inter({ variable: '--font-inter', subsets: ['latin'] })
 
 export const metadata = {
   title: 'Skidpad',
@@ -12,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={clsx(inter.variable)}>{children}</body>
     </html>
   )
 }
