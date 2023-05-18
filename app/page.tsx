@@ -1,13 +1,16 @@
 'use client'
 import React from 'react'
+import moment from 'moment-timezone'
 import type { Event } from '@/infrastructure/event'
 
 import { dmec, fdUs } from '@/_data'
 import Wrapper from '@/components/shared/wrapper'
 import Location from '@/components/shared/icons/location'
 import Calendar from '@/components/shared/icons/calendar'
+import { useUserContext } from '@/components/shared/providers/user-context'
 
 export default function Home() {
+  const { timezone } = useUserContext()
   const data: Event[] = [...dmec, ...fdUs]
   return (
     <Wrapper>
@@ -25,7 +28,7 @@ export default function Home() {
                   <h1 className='font-semibold'>{item.name}</h1>
                   <div className='mt-1 space-y-1'>
                     <span className='flex items-center space-x-2 text-neutral-400 text-xs'><Location className='w-3 h-3'/> <p>{item.location}</p></span>
-                    <span className='flex items-center space-x-2 text-neutral-400 text-xs'><Calendar className='w-3 h-3'/> <p>{item.startDate || 'Coming Soon'}</p></span>
+                    <span className='flex items-center space-x-2 text-neutral-400 text-xs'><Calendar className='w-3 h-3'/> <p>{moment.utc(item.startDate).tz(timezone).format('ddd, Do MMM, h:mmA') || 'Coming Soon'}</p></span>
                   </div>
                 </div>
               </div>

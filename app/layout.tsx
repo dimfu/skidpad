@@ -1,6 +1,8 @@
+'use client'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import clsx from 'clsx'
+import { UserContextProvider } from '@/components/shared/providers/user-context'
 
 const inter = Inter({ variable: '--font-inter', subsets: ['latin'] })
 
@@ -16,7 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx(inter.variable, 'min-h-screen')}>{children}</body>
+      <UserContextProvider>
+        <body className={clsx(inter.variable, 'min-h-screen')}>{children}</body>
+      </UserContextProvider>
     </html>
   )
 }
