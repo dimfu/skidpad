@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "fetch-events": "ts-node ./infrastructure/remove-data.ts && ts-node ./infrastructure/fetch-events.ts"
+    "fetch-events": "ts-node ./infrastructure/fetch-events.ts",
+    "lint-fetch": "pnpm lint:fix && pnpm fetch-events"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.29.7",
@@ -42,6 +43,6 @@
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "*": "pnpm lint:fix"
+    "*": "pnpm lint-fetch"
   }
 }
