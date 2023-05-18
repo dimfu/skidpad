@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "fetch-events": "ts-node ./infrastructure/fetch-events.ts"
+    "fetch-events": "ts-node ./infrastructure/remove-data.ts && ts-node ./infrastructure/fetch-events.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.29.7",
