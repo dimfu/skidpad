@@ -62,7 +62,7 @@ export default async function dmec() {
         })
 
         resolve({
-          slug: 'dmec',
+          slug: 'Drift Masters EU',
           name,
           location,
           round,

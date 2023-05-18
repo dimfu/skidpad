@@ -47,7 +47,7 @@ export default async function fdUs() {
     })
 
     return {
-      slug: 'fd-us',
+      slug: 'Formula Drift (US)',
       name,
       location,
       round,

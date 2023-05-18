@@ -5,7 +5,7 @@ export interface Event {
   round: string
   startDate: string
   url: string
-  schedule?: {
+  schedule: {
     started_at: string
     content: {
       time: string
