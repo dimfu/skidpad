@@ -29,7 +29,7 @@ export default function Home() {
                   <h1 className='font-semibold'>{item.name}</h1>
                   <div className='mt-1 space-y-1'>
                     <span className='flex items-center space-x-2 text-neutral-400 text-xs'><Location className='w-3 h-3'/> <p>{item.location}</p></span>
-                    <span className='flex items-center space-x-2 text-neutral-400 text-xs'><Calendar className='w-3 h-3'/> <p>{moment.utc(item.startDate).tz(timezone).format('ddd, Do MMM, h:mmA') || 'Coming Soon'}</p></span>
+                    <span className='flex items-center space-x-2 text-neutral-400 text-xs'><Calendar className='w-3 h-3'/> <p>{item.startDate ? moment.utc(item.startDate).tz(timezone).format('ddd, Do MMM, h:mmA') : 'Coming Soon'}</p></span>
                   </div>
                 </div>
               </div>
