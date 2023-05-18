@@ -4,10 +4,13 @@
 
 @layer base {
   * {
-	@apply font-default bg-neutral-900;
+		@apply font-default bg-neutral-900;
   	scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
 		text-rendering: optimizeLegibility;
 		color-scheme: dark;
   }	
+	body {
+		min-height: 100vh;
+	}
 }
