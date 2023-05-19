@@ -6,16 +6,15 @@ import 'dotenv/config'
 import type { Event } from '../event'
 
 export default async function fdUs() {
-  const TITLE = 'Formula Drift USA'
   const SOURCE_URL = 'https://www.formulad.com'
-
+  const CURRENT_YEAR = new Date().getFullYear().toString()
   const source = await fetch(`${SOURCE_URL}/schedule`)
   const $ = cheerio.load(await source.text())
   const events: Event[] = await Promise.all($('.event-summary').map(async (_, el) => {
-    const name = `${TITLE} (${$(el).find('.leagues > span').text().replace(/([a-z])([A-Z])/g, '$1, $2')})`
     const location = $(el).find('.location').text()
     const round = $(el).find('.name').text()
     const url = SOURCE_URL + $(el).find('.link > a').attr('href') as string
+    const name = `FDUS ${CURRENT_YEAR} - ${round}`
 
     // Using api-ninjas to get timezone name using city name that provided in link
     // Get your api key here: https://api-ninjas.com/profile
