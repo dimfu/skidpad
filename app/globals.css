@@ -4,7 +4,7 @@
 
 @layer base {
   * {
-		@apply font-default bg-neutral-900;
+		@apply font-default;
   	scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
 		text-rendering: optimizeLegibility;

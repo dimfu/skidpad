@@ -4,26 +4,30 @@ import { useEventItemContext } from './context'
 import Calendar from '@/components/shared/icons/calendar'
 import Location from '@/components/shared/icons/location'
 import { useUserContext } from '@/components/shared/providers/user-context'
+import Image from '@/components/shared/image'
 
 export function EventDetailsWrapper({ children }: { children: React.ReactNode }) {
+  const { slug, url } = useEventItemContext()
   return (
     <div className="flex items-start gap-x-4">
-      <div className="w-[52px] rounded-[10px] h-[52px] bg-[#1e1e1e]" />
-      <div className="self-start">{children}</div>
+      <div className="relative w-[52px] rounded-[10px] h-[52px]">
+        <Image className='object-cover rounded-full' src={`https://www.google.com/s2/favicons?sz=64&domain_url=${url}`} alt={slug} fill/>
+      </div>
+      <div className="self-center">{children}</div>
     </div>
   )
 }
 
 export function EventName() {
   const { name } = useEventItemContext()
-  return <h1 className="font-semibold">{name}</h1>
+  return <h1 className="font-semibold text-sm md:text-base">{name}</h1>
 }
 
 export function EventDetails() {
   const { location, startDate } = useEventItemContext()
   const { timezone } = useUserContext()
   return (
-    <div className="mt-1 space-y-1">
+    <div className="mt-1 flex flex-col md:flex-row md:items-center md:space-x-3">
       <span className="flex items-center space-x-2 text-neutral-400 text-xs">
         <Location className="w-3 h-3" /> <p>{location}</p>
       </span>

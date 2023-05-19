@@ -10,10 +10,10 @@ export default function Home() {
   const { data, isLoading } = useQuery<Event[]>(['events'], () => fetch('/api/events').then(res => res.json()))
   return (
     <Wrapper>
-      <div className='mt-[75px] flex flex-col lg:flex-row justify-between lg:w-full mx-auto relative gap-x-[50px]'>
-        <section className='lg:sticky top-[100px] self-start w-[323px]'>
+      <div className='mt-[75px] px-4 md:px-4 flex flex-col lg:flex-row justify-between w-full mx-auto relative gap-x-[50px]'>
+        <section className='lg:sticky top-[100px] self-start p-4'>
           <h1 className='font-semibold text-2xl'>Skidpad</h1>
-          <p className='font-medium text-neutral-400'>Drift events calendar around the world</p>
+          <p className='text-neutral-400'>Drift events calendar around the world</p>
         </section>
         <EventsContainer isLoading={isLoading} events={data}/>
       </div>

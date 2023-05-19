@@ -8,7 +8,7 @@ interface Props {
 
 export default function EventsContainer({ isLoading, events }: Props) {
   return (
-    <ul className="flex flex-col items-center justify-between w-auto mt-[50px] lg:mt-[-20px] pb-5">
+    <ul className="flex flex-col items-center justify-between mt-[25px] space-y-4 pb-5 w-full lg:w-2/3">
       {!isLoading
         ? events?.map(event => (
             <EventItem
@@ -19,6 +19,11 @@ export default function EventsContainer({ isLoading, events }: Props) {
                   <EventItem.EventName />
                   <EventItem.EventDetails />
                 </EventItem.EventDetailsWrapper>
+              }
+              actions={
+                <EventItem.EventLink href={event.url}>
+                  <span className="font-semibold">Learn More</span>
+                </EventItem.EventLink>
               }
             />
         ))
