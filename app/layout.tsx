@@ -1,4 +1,9 @@
 import './globals.css'
+import { Inter } from 'next/font/google'
+import clsx from 'clsx'
+import Providers from '@/components/shared/providers'
+
+const inter = Inter({ variable: '--font-inter', subsets: ['latin'] })
 
 export const metadata = {
   title: 'Skidpad',
@@ -11,8 +16,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html suppressHydrationWarning lang="en">
+      <Providers>
+        <body className={clsx(inter.variable, 'bg-neutral-950 min-h-screen')}>{children}</body>
+      </Providers>
     </html>
   )
 }

@@ -47,7 +47,7 @@ export default async function fdUs() {
     })
 
     return {
-      slug: 'fd-us',
+      slug: 'Formula Drift (US)',
       name,
       location,
       round,
@@ -61,5 +61,7 @@ export default async function fdUs() {
   }).get(),
   )
 
-  fs.writeFileSync(path.resolve(__dirname, '../../_data/fd-us.json'), JSON.stringify(events))
+  const removeNoSchedules = events.filter(event => event.schedule.length > 0)
+
+  fs.writeFileSync(path.resolve(__dirname, '../../_data/fd-us.json'), JSON.stringify(removeNoSchedules))
 }
