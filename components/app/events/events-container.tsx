@@ -1,3 +1,4 @@
+import React from 'react'
 import { EventItem, EventSkeleton } from './event-item'
 import type { Event } from '@/infrastructure/event'
 
@@ -16,14 +17,17 @@ export default function EventsContainer({ isLoading, events }: Props) {
               event={event}
               details={
                 <EventItem.EventDetailsWrapper>
-                  <EventItem.EventName />
-                  <EventItem.EventDetails />
+                  <EventItem.Name />
+                  <EventItem.Details />
                 </EventItem.EventDetailsWrapper>
               }
               actions={
-                <EventItem.EventLink href={event.url}>
-                  <span className="font-semibold">Learn More</span>
-                </EventItem.EventLink>
+                <React.Fragment>
+                  <EventItem.Schedule />
+                  <EventItem.Link href={event.url}>
+                    <span className="font-semibold">Learn More</span>
+                  </EventItem.Link>
+                </React.Fragment>
               }
             />
         ))
