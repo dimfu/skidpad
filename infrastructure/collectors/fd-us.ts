@@ -28,34 +28,26 @@ export default async function fdUs() {
     let startDate: string
 
     const schedules = $$('table').map((_, tb) => {
-      // On the website the current date is before the table, so use prev() to get previous element
       startDate = $$(tb).prev().text()
       const content = $$(tb).find('tbody > tr').map((_, tr) => {
-        const time = $$(tr).find('td:first-child').text().trim() as string
+        const times = $$(tr).find('td:first-child').text().trim() as string
         const program = $$(tr).find('td:last-child').text().trim()
-        return { time, program }
+        const formatTime = times.split(' - ').map((time) => {
+          return moment.tz(`${startDate} ${time}`, 'dddd, MMMM D, YYYY h:mmA', timezone).toISOString()
+        }).join('–')
+        return { time: formatTime, program }
       }).get()
-      return { started_at: _.toString(), content }
+      return { started_at: content[0].time, content }
     }).get()
-
-    // Get the first program time for each day and format to ISO
-    const formatStartTimes = schedules.map((schedule) => {
-      const firstSchedule = schedule.content[0].time.split('-')[0]
-      const formatToIsoString = moment.tz(`${startDate} ${firstSchedule}`, 'dddd, MMMM D, YYYY h:mmA', timezone).toISOString()
-      return formatToIsoString
-    })
 
     return {
       slug: 'Formula Drift (US)',
       name,
       location,
       round,
-      // Use the first day first program time
-      startDate: formatStartTimes[0],
+      startDate: schedules[0]?.content[0].time.split('–')[0],
       url,
-      schedule: schedules.map((schedule, index) => {
-        return { ...schedule, started_at: formatStartTimes[index] }
-      }),
+      schedule: schedules,
     }
   }).get(),
   )

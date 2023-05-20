@@ -48,29 +48,24 @@ export default async function dmec() {
         const schedules = $('table:eq(1), table:eq(2)').map((_, tb) => {
           startDate = $(tb).find('tr:first-child > th').text().trim().split('–')[0].trim()
           const content = $(tb).find('tbody > tr').map((_, tr) => {
-            const time = $(tr).find('td:first-child').text().trim() as string
+            const times = $(tr).find('td:first-child').text().trim() as string
             const program = $(tr).find('td:last-child').text().trim()
-            return { time, program }
+            const formatTime = times.split(' – ').map((time) => {
+              return moment.tz(`${startDate} ${time}`, 'dddd, Do MMMM YYYY HH.mm', timezone).toISOString()
+            }).join('–')
+            return { time: formatTime, program }
           }).get()
-          return { started_at: _.toString(), content }
+          return { started_at: content[0].time, content }
         }).get()
-
-        const formatStartTimes = schedules.map((schedule) => {
-          const firstSchedule = schedule.content[0].time.split('-')[0]
-          const formatToIsoString = moment.tz(`${startDate} ${firstSchedule}`, 'dddd, Do MMMM YYYY HH.mm', timezone).toISOString()
-          return formatToIsoString
-        })
 
         resolve({
           slug: 'Drift Masters EU',
           name,
           location,
           round,
-          startDate: formatStartTimes[0],
+          startDate: schedules[0].content[0].time.split('–')[0],
           url: newUrl,
-          schedule: schedules.map((schedule, index) => {
-            return { ...schedule, started_at: formatStartTimes[index] }
-          }),
+          schedule: schedules,
         })
       }).catch(err => reject(err))
     }))
@@ -85,5 +80,3 @@ export default async function dmec() {
     throw new Error(err as string)
   }
 }
-
-dmec()
