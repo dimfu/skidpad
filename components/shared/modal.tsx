@@ -1,6 +1,7 @@
 'use client'
 
 import type { PanInfo } from 'framer-motion'
+import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock'
 import { AnimatePresence, motion, useAnimation } from 'framer-motion'
 import React from 'react'
 
@@ -19,6 +20,13 @@ export default function Modal({
 }) {
   const mobileModalRef = React.useRef<HTMLDivElement | null>(null)
   const desktopModalRef = React.useRef<HTMLDivElement | null>(null)
+
+  React.useEffect(() => {
+    if (desktopModalRef.current)
+      disableBodyScroll(desktopModalRef.current, { reserveScrollBarGap: true })
+
+    return () => clearAllBodyScrollLocks()
+  }, [])
 
   const closeModal = React.useCallback(
     (closeWithX?: boolean) => {
