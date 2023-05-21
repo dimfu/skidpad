@@ -1,6 +1,6 @@
 import EventContext from './context'
 import { EventDetails, EventDetailsWrapper, EventName } from './event-details'
-import { EventLink } from './event-actions'
+import { EventLink, EventSchedule } from './event-actions'
 import type { Event } from '@/infrastructure/event'
 
 interface Props {
@@ -24,7 +24,8 @@ function EventSkeleton() {
           </div>
         </div>
       </div>
-      <div className="px-5 py-2 flex items-center h-[53px] border-inherit border-t w-full text-neutral-400 text-sm">
+      <div className="px-5 py-2 flex space-x-2 items-center h-[53px] border-inherit border-t w-full text-neutral-400 text-sm">
+        <div className='w-[112px] h-9 py-2 bg-[#1e1e1e] animate-pulse rounded'/>
         <div className='w-[112px] h-9 py-2 bg-[#1e1e1e] animate-pulse rounded'/>
       </div>
     </li>
@@ -34,17 +35,18 @@ function EventSkeleton() {
 function EventItem({ event, details, actions }: Props) {
   return (
     <EventContext.Provider value={event}>
-      <li className="w-full rounded-lg border border-neutral-700 bg-neutral-900 shadow" key={event.url}>
+      <li className="relative w-full rounded-lg border border-neutral-700 bg-neutral-900 shadow" key={event.url}>
         <div className="p-5 flex items-center justify-between">{details}</div>
-        <div className="px-5 py-2 border-inherit border-t w-full text-neutral-400 text-sm">{actions}</div>
+        <div className="flex items-center space-x-2 px-5 py-2 border-inherit border-t w-full text-neutral-400 text-sm">{actions}</div>
       </li>
     </EventContext.Provider>
   )
 }
 
 EventItem.EventDetailsWrapper = EventDetailsWrapper
-EventItem.EventName = EventName
-EventItem.EventDetails = EventDetails
-EventItem.EventLink = EventLink
+EventItem.Name = EventName
+EventItem.Details = EventDetails
+EventItem.Link = EventLink
+EventItem.Schedule = EventSchedule
 
 export { EventItem, EventSkeleton }
