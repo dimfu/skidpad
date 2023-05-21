@@ -35,7 +35,7 @@ function EventSkeleton() {
 function EventItem({ event, details, actions }: Props) {
   return (
     <EventContext.Provider value={event}>
-      <li className="w-full rounded-lg border border-neutral-700 bg-neutral-900 shadow" key={event.url}>
+      <li className="relative w-full rounded-lg border border-neutral-700 bg-neutral-900 shadow" key={event.url}>
         <div className="p-5 flex items-center justify-between">{details}</div>
         <div className="flex items-center space-x-2 px-5 py-2 border-inherit border-t w-full text-neutral-400 text-sm">{actions}</div>
       </li>
