@@ -8,7 +8,7 @@ export default function Modal({
   children,
   showModal,
   setShowModal,
-  bgColor = 'bg-neutral-600',
+  bgColor = 'bg-neutral-800',
   closeWithX,
 }: {
   children: React.ReactNode
@@ -90,9 +90,9 @@ export default function Modal({
             dragElastic={{ top: 0, bottom: 1 }}
             dragConstraints={{ top: 0, bottom: 0 }}
           >
-            <div className={`h-7 ${bgColor} rounded-t-4xl -mb-1 flex w-full items-center justify-center border-t border-gray-200`}>
-              <div className="-mr-1 h-1 w-6 rounded-full bg-main-600 transition-all group-active:rotate-12" />
-              <div className="h-1 w-6 rounded-full bg-main-600 transition-all group-active:-rotate-12" />
+            <div className={`h-7 ${bgColor} rounded-t-3xl -mb-1 flex w-full items-center justify-center`}>
+              <div className="-mr-1 h-1 w-6 rounded-full bg-neutral-500 transition-all group-active:rotate-12" />
+              <div className="h-1 w-6 rounded-full bg-neutral-500 transition-all group-active:-rotate-12" />
             </div>
             {children}
           </motion.div>
