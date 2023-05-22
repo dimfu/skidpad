@@ -5,10 +5,12 @@ import React, { createContext, useContext, useMemo, useState } from 'react'
 
 interface IContext {
   timezone: string
+  updateTimezone: (_timezone: string) => void
 }
 
 const defaultValues: IContext = {
   timezone: 'Asia/Makassar',
+  updateTimezone: (_timezone: string) => {},
 }
 
 export const UserContext = createContext<IContext>(defaultValues)
@@ -23,9 +25,13 @@ export function UserContextProvider({ children }: { children: ReactNode }) {
     setTimezone(moment.tz.guess())
   }, [])
 
+  const updateTimezone = React.useCallback((timezone: string) => {
+    setTimezone(timezone)
+  }, [])
+
   const value = useMemo(() => {
-    return { timezone }
-  }, [timezone])
+    return { timezone, updateTimezone }
+  }, [timezone, updateTimezone])
 
   return (
     <UserContext.Provider value={value}>
