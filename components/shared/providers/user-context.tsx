@@ -22,10 +22,15 @@ export function UserContextProvider({ children }: { children: ReactNode }) {
   const [timezone, setTimezone] = useState<string>(defaultValues.timezone)
 
   React.useEffect(() => {
+    const savedTimezone = localStorage.getItem('timezone')
+    if (savedTimezone)
+      return setTimezone(savedTimezone)
+
     setTimezone(moment.tz.guess())
   }, [])
 
   const updateTimezone = React.useCallback((timezone: string) => {
+    localStorage.setItem('timezone', timezone)
     setTimezone(timezone)
   }, [])
 
