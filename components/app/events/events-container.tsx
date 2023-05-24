@@ -1,7 +1,8 @@
 import React from 'react'
-import moment from 'moment'
+import moment from 'moment-timezone'
 import { EventItem, EventSkeleton } from './event-item'
 import type { Event } from '@/infrastructure/event'
+import { useUserContext } from '@/components/shared/providers/user-context'
 
 interface Props {
   isLoading: boolean
@@ -9,14 +10,15 @@ interface Props {
 }
 
 export default function EventsContainer({ isLoading, events }: Props) {
+  const { timezone } = useUserContext()
   return (
     <ul className="flex flex-col items-center justify-between mt-[25px] space-y-4 pb-5 w-full lg:w-2/3">
       {!isLoading
         ? events
           ?.sort((a, b) => {
-            const today = moment()
-            const dateA = moment(a.schedule.at(-1)?.content.at(-1)?.time.split('–')[1])
-            const dateB = moment(b.schedule.at(-1)?.content.at(-1)?.time.split('–')[1])
+            const today = moment().tz(timezone)
+            const dateA = moment.utc(a.schedule.at(-1)?.content.at(-1)?.time.split('–')[1]).tz(timezone)
+            const dateB = moment.utc(b.schedule.at(-1)?.content.at(-1)?.time.split('–')[1]).tz(timezone)
 
             if (dateA.isBefore(today) && dateB.isBefore(today))
               return dateB.diff(dateA)
