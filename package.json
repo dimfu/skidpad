@@ -25,6 +25,7 @@
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
     "framer-motion": "^10.12.12",
+    "moment": "^2.29.4",
     "moment-timezone": "^0.5.43",
     "next": "13.4.3",
     "postcss": "8.4.23",
@@ -48,6 +49,6 @@
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "*": "pnpm lint-fetch"
+    "*": "pnpm lint:fix"
   }
 }

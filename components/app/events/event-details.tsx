@@ -1,5 +1,6 @@
-import moment from 'moment-timezone'
 import React from 'react'
+import clsx from 'clsx'
+import moment from 'moment'
 import { useEventItemContext } from './context'
 import Calendar from '@/components/shared/icons/calendar'
 import Location from '@/components/shared/icons/location'
@@ -19,8 +20,8 @@ export function EventDetailsWrapper({ children }: { children: React.ReactNode })
 }
 
 export function EventName() {
-  const { name } = useEventItemContext()
-  return <h1 className="font-semibold text-sm md:text-base">{name}</h1>
+  const { name, schedule } = useEventItemContext()
+  return <h1 className={clsx('font-semibold text-sm md:text-base', moment(schedule.at(-1)?.content.at(-1)?.time.split('–')[1]).isBefore(moment()) && 'line-through')}>{name}</h1>
 }
 
 export function EventDetails() {

@@ -19,6 +19,7 @@ specifiers:
   eslint-config-next: 13.4.3
   framer-motion: ^10.12.12
   lint-staged: ^13.2.2
+  moment: ^2.29.4
   moment-timezone: ^0.5.43
   next: 13.4.3
   ora: ^5.4.1
@@ -43,6 +44,7 @@ dependencies:
   eslint: 8.41.0
   eslint-config-next: 13.4.3_opaykosi7ysrbskpnffskmbrki
   framer-motion: 10.12.12_biqbaboplfbrettd7655fr4n2y
+  moment: 2.29.4
   moment-timezone: 0.5.43
   next: 13.4.3_biqbaboplfbrettd7655fr4n2y
   postcss: 8.4.23
