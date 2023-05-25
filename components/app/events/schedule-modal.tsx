@@ -55,9 +55,9 @@ function ScheduleModal({ showSchedule, setShowSchedule }: { showSchedule: boolea
                         IconIndicator = <Circle className={clsx(iconIndicatorClass, 'text-neutral-400')} />
 
                       return (
-                        <li className="relative my-auto" key={c.time}>
+                        <li className="relative my-auto border-b border-b-neutral-700 pb-2" key={c.time}>
                           <div>
-                            {id + 1 !== s.content.length && <div className="absolute -left-[38px] top-[23px] -bottom-[23px] w-[1px] bg-neutral-500" />}
+                            {id + 1 !== s.content.length && <div className={clsx('absolute -left-[38px] top-[23px] -bottom-[23px] w-[1px]', isCurrentProgram ? 'bg-neutral-500' : isProgramBeforeToday ? 'bg-neutral-50' : 'bg-neutral-500')}/>}
                             {IconIndicator}
                           </div>
                           <div>
