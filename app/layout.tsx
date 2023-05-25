@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <Providers>
-        <body className={clsx(inter.variable, 'bg-neutral-950')}>{children}</body>
+        <body className={clsx(inter.variable)}>{children}</body>
       </Providers>
     </html>
   )
