@@ -2,10 +2,12 @@
 
 import * as Select from '@radix-ui/react-select'
 import { getAllTimezones } from 'countries-and-timezones'
+import moment from 'moment-timezone'
 import Check from '@/components/shared/icons/check'
 import ChevronDown from '@/components/shared/icons/chevron-down'
 import Clock from '@/components/shared/icons/clock'
 import { useUserContext } from '@/components/shared/providers/user-context'
+import Repeat from '@/components/shared/icons/repeat'
 
 export function TimezoneSkeleton() {
   return (
@@ -24,10 +26,21 @@ export function TimezoneSkeleton() {
 export default function Timezone() {
   const { timezone, updateTimezone } = useUserContext()
   const timezones = getAllTimezones()
+
+  function resetTimezone() {
+    updateTimezone(moment.tz.guess())
+  }
+
   return (
     <>
-      <h2 className="mb-2 text-sm text-neutral-400">Select Timezone</h2>
-      <Select.Root defaultValue={timezone} onValueChange={event => updateTimezone(event)}>
+      <div className="flex items-center justify-between mb-2">
+        <h2 className="text-sm text-neutral-400">Select Timezone</h2>
+        <div onClick={resetTimezone} className='flex items-center space-x-1 group text-sm text-neutral-400 cursor-pointer'>
+          <Repeat className='w-4 h-4'/>
+          <span className='group-hover:underline'>Reset</span>
+        </div>
+      </div>
+      <Select.Root value={timezone} onValueChange={event => updateTimezone(event)}>
         <Select.Trigger className="flex justify-between items-center rounded bg-[#1e1e1e] px-4 py-3 outline-none leading-none w-full">
           <div className="flex items-center space-x-2">
             <Select.Icon>
