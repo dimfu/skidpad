@@ -1,10 +1,13 @@
 import type { SetStateAction } from 'react'
 import React from 'react'
 import moment from 'moment-timezone'
+import clsx from 'clsx'
 import { useEventItemContext } from './context'
 import Modal from '@/components/shared/modal'
 import { useUserContext } from '@/components/shared/providers/user-context'
 import Circle from '@/components/shared/icons/circle'
+import CheckFill from '@/components/shared/icons/check-fill'
+import Record from '@/components/shared/icons/record'
 
 function ScheduleModal({ showSchedule, setShowSchedule }: { showSchedule: boolean; setShowSchedule: React.Dispatch<SetStateAction<boolean>> }) {
   const { schedule } = useEventItemContext()
@@ -24,30 +27,60 @@ function ScheduleModal({ showSchedule, setShowSchedule }: { showSchedule: boolea
                 <div className="py-8" key={s.started_at}>
                   <div className="relative mb-8 inline-block text-lg font-semibold">{moment.utc(s.started_at.split('–')[0]).tz(timezone).format('dddd')}</div>
                   <ul className="flex flex-col gap-y-[20px] pl-14">
-                    {s.content.map((c, id) => (
-                      <li className="relative my-auto" key={c.program}>
-                        <div>
-                          {id + 1 !== s.content.length && <div className="absolute -left-[38px] top-[23px] -bottom-[23px] w-[1px] bg-neutral-500" />}
-                          <Circle className="absolute z-10 left-[calc((40px)*-1-9px)] top-0 text-neutral-500" />
-                        </div>
-                        <div>
-                          <p className="text-white text-sm">{c.program}</p>
-                          <span className="text-neutral-400 text-sm">
-                            {c.time
-                              .split('–')
-                              .map(t => moment.utc(t).tz(timezone).format('h:mmA'))
-                              .join(' - ')}
-                          </span>
-                        </div>
-                      </li>
-                    ))}
+                    {s.content.map((c, id) => {
+                      let IconIndicator, lastProgramTime
+                      const nextProgram = s.content[id + 1]
+                      const firstProgramTime = moment.utc(c.time.split('–')[0]).tz(timezone)
+
+                      if (c.time && c.time.includes('–'))
+                        lastProgramTime = moment.utc(c.time.split('–')[1]).tz(timezone)
+
+                      else if (nextProgram && nextProgram.time)
+                        lastProgramTime = moment.utc(nextProgram.time.split('–')[0]).tz(timezone)
+
+                      else
+                        lastProgramTime = firstProgramTime.endOf('day')
+
+                      const now = moment.utc().tz(timezone)
+                      const isProgramBeforeToday = lastProgramTime.tz(timezone).isBefore(now)
+                      const isCurrentProgram = now.isBetween(firstProgramTime, lastProgramTime)
+
+                      const iconIndicatorClass = 'absolute z-10 left-[calc((40px)*-1-9px)] top-0'
+
+                      if (isCurrentProgram)
+                        IconIndicator = <Record className={clsx(iconIndicatorClass, 'text-green-500 w-6 h-6 animate-pulse')}/>
+                      else if (isProgramBeforeToday)
+                        IconIndicator = <CheckFill className={clsx(iconIndicatorClass, 'text-white w-6 h-6')} />
+                      else
+                        IconIndicator = <Circle className={clsx(iconIndicatorClass, 'text-neutral-400')} />
+
+                      return (
+                        <li className="relative my-auto border-b border-b-neutral-700 pb-2" key={c.time}>
+                          <div>
+                            {id + 1 !== s.content.length && <div className={clsx('absolute -left-[38px] top-[23px] -bottom-[23px] w-[1px]', isCurrentProgram ? 'bg-neutral-500' : isProgramBeforeToday ? 'bg-neutral-50' : 'bg-neutral-500')}/>}
+                            {IconIndicator}
+                          </div>
+                          <div>
+                            <p className={clsx('text-white text-sm', isProgramBeforeToday && 'line-through')}>{c.program}</p>
+                            <span className="text-neutral-400 text-sm">
+                              {c.time
+                                .split('–')
+                                .map(t => moment.utc(t).tz(timezone).format('h:mmA'))
+                                .join(' - ')}
+                            </span>
+                          </div>
+                        </li>
+                      )
+                    })}
                   </ul>
                 </div>
               ))}
           </div>
         </div>
         <div className="p-4">
-          <button onClick={() => setShowSchedule(false)} className="p-3 bg-white rounded-xl w-full text-neutral-900 font-bold text-lg">Close</button>
+          <button onClick={() => setShowSchedule(false)} className="p-3 bg-white rounded-xl w-full text-neutral-900 font-bold text-lg">
+            Close
+          </button>
         </div>
       </div>
     </Modal>

@@ -12,7 +12,7 @@ export function EventDetailsWrapper({ children }: { children: React.ReactNode })
   return (
     <div className="flex items-start gap-x-4">
       <div className="relative w-[52px] rounded-[10px] h-[52px]">
-        <Image className='object-cover rounded-full' src={`https://www.google.com/s2/favicons?sz=64&domain_url=${url}`} alt={slug} fill/>
+        <Image className='object-cover rounded-full' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={`https://www.google.com/s2/favicons?sz=64&domain_url=${url}`} alt={slug} fill/>
       </div>
       <div className="self-center">{children}</div>
     </div>
