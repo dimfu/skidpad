@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function EventsContainer({ isLoading, events }: Props) {
-  const { timezone } = useUserContext()
+  const { timezone, hidePastEvents } = useUserContext()
   return (
     <ul className="flex flex-col items-center justify-between mt-[25px] space-y-4 pb-5 w-full lg:w-2/3">
       {!isLoading
@@ -32,6 +32,7 @@ export default function EventsContainer({ isLoading, events }: Props) {
               <EventItem
                 key={event.url}
                 event={event}
+                hide={hidePastEvents}
                 details={
                   <EventItem.EventDetailsWrapper>
                     <EventItem.Name />

@@ -1,10 +1,14 @@
+import moment from 'moment-timezone'
+import clsx from 'clsx'
 import EventContext from './context'
 import { EventDetails, EventDetailsWrapper, EventName } from './event-details'
 import { EventLink, EventSchedule } from './event-actions'
 import type { Event } from '@/infrastructure/event'
+import { useUserContext } from '@/components/shared/providers/user-context'
 
 interface Props {
   event: Event
+  hide: boolean
   details: React.ReactNode
   actions: React.ReactNode
 }
@@ -32,10 +36,12 @@ function EventSkeleton() {
   )
 }
 
-function EventItem({ event, details, actions }: Props) {
+function EventItem({ event, details, actions, hide }: Props) {
+  const { timezone } = useUserContext()
+  const isPastEvent = hide && moment.utc(event.schedule.at(-1)?.content.at(-1)?.time.split('–')[1]).tz(timezone).isBefore(moment())
   return (
     <EventContext.Provider value={event}>
-      <li className="relative w-full rounded-lg border border-neutral-700 bg-neutral-900 shadow" key={event.url}>
+      <li className={clsx('relative w-full rounded-lg border border-neutral-700 bg-neutral-900 shadow', isPastEvent ? 'hidden' : 'block')} key={event.url}>
         <div className="p-5 flex items-center justify-between">{details}</div>
         <div className="flex items-center space-x-2 px-5 py-2 border-inherit border-t w-full text-neutral-400 text-sm">{actions}</div>
       </li>

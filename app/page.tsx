@@ -7,9 +7,10 @@ import type { Event } from '@/infrastructure/event'
 import Wrapper from '@/components/shared/wrapper'
 import EventsContainer from '@/components/app/events/events-container'
 import { TimezoneSkeleton } from '@/components/app/events/timezone'
+import PastFilter from '@/components/app/events/past-filter'
 
 const Timezone = dynamic(() => import('@/components/app/events/timezone'), {
-  loading: () => <TimezoneSkeleton/>,
+  loading: () => <TimezoneSkeleton />,
   ssr: false,
 })
 
@@ -23,6 +24,7 @@ export default function Home() {
           <p className="text-neutral-400">Drift events calendar around the world</p>
           <div className="relative py-4 my-4 w-full border-t border-t-neutral-600">
             <Timezone />
+            <PastFilter />
           </div>
         </section>
         <EventsContainer isLoading={isLoading} events={data} />

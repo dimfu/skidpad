@@ -11,7 +11,7 @@ import Repeat from '@/components/shared/icons/repeat'
 
 export function TimezoneSkeleton() {
   return (
-    <>
+    <div>
       <h2 className="mb-2 text-sm text-neutral-400">Select Timezone</h2>
       <div className="flex justify-between items-center rounded bg-[#1e1e1e] px-4 py-3 w-full">
         <div className="flex items-center space-x-2">
@@ -19,7 +19,7 @@ export function TimezoneSkeleton() {
           <div className="w-40 h-5 bg-neutral-600 rounded animate-pulse" />
         </div>
       </div>
-    </>
+    </div >
   )
 }
 
@@ -32,7 +32,7 @@ export default function Timezone() {
   }
 
   return (
-    <>
+    <div>
       <div className="flex items-center justify-between mb-2">
         <h2 className="text-sm text-neutral-400">Select Timezone</h2>
         <div onClick={resetTimezone} className='flex items-center space-x-1 group text-sm text-neutral-400 cursor-pointer'>
@@ -79,6 +79,6 @@ export default function Timezone() {
           </Select.Content>
         </Select.Portal>
       </Select.Root>
-    </>
+    </div>
   )
 }
