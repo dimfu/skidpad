@@ -29,9 +29,12 @@ export default function Search({ params }: { params: ReadonlyURLSearchParams }) 
   }, [onKeyDown])
 
   return (
-    <div className="relative mt-2">
+    <div className="relative mt-4">
+      <div className='flex justify-between mb-2'>
+        <label className='text-sm text-neutral-400'>Search filter</label>
+      </div>
       <input
-        placeholder="Search events"
+        placeholder="Type / to search"
         type="text"
         onChange={event => debounced(event.target.value)}
         defaultValue={searchParams?.toString()}
