@@ -14,9 +14,30 @@ export default function Search({ params }: { params: ReadonlyURLSearchParams }) 
     router.push(`${pathname}?${createQueryString(params, 'search', value)}`)
   }, 500)
 
+  const onKeyDown = React.useCallback((event: KeyboardEvent) => {
+    const target = event.target as HTMLElement
+    if (ref.current && event.key === '/' && target.tagName !== 'INPUT') {
+      event.preventDefault()
+      ref.current.focus()
+      ref.current.selectionEnd = -1
+    }
+  }, [])
+
+  React.useEffect(() => {
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [onKeyDown])
+
   return (
     <div className="relative mt-2">
-      <input placeholder="Search events" onChange={event => debounced(event.target.value)} defaultValue={searchParams?.toString()} className="w-full bg-[#1e1e1e] px-4 py-3 rounded outline-none" ref={ref} />
+      <input
+        placeholder="Search events"
+        type="text"
+        onChange={event => debounced(event.target.value)}
+        defaultValue={searchParams?.toString()}
+        className="w-full bg-[#1e1e1e] px-4 py-3 rounded outline-none"
+        ref={ref}
+      />
     </div>
   )
 }
