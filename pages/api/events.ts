@@ -1,11 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Fuse from 'fuse.js'
-import { dmec, fdUs } from '@/_data'
+import { dmec, fdUs, lzWorldTour } from '@/_data'
 import type { Event } from '@/infrastructure/event'
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { search } = req.query
-  const mergeEvents = [...dmec, ...fdUs]
+  const mergeEvents = [...dmec, ...fdUs, ...lzWorldTour]
   const fuseInstance = new Fuse<Event>(mergeEvents, {
     keys: [
       { name: 'name', weight: 1 },
