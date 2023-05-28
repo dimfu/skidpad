@@ -3,8 +3,10 @@ import type { ReadonlyURLSearchParams } from 'next/navigation'
 import { useDebouncedCallback } from 'use-debounce'
 import React from 'react'
 import { createQueryString } from '@/libs/utils'
+import LoadingSpinner from '@/components/shared/icons/loading-spinner/loading-spinner'
+import SearchIcon from '@/components/shared/icons/search'
 
-export default function Search({ params }: { params: ReadonlyURLSearchParams }) {
+export default function Search({ params, isLoading }: { params: ReadonlyURLSearchParams; isLoading: boolean }) {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = params?.get('search')
@@ -29,18 +31,18 @@ export default function Search({ params }: { params: ReadonlyURLSearchParams }) 
   }, [onKeyDown])
 
   return (
-    <div className="relative mt-4">
-      <div className='flex justify-between mb-2'>
-        <label className='text-sm text-neutral-400'>Search filter</label>
+    <div className="mt-4 pt-4 border-t border-neutral-600">
+      <div className="relative">
+        <div className="absolute inset-y-0 left-0 flex items-center pl-4">{isLoading ? <LoadingSpinner /> : <SearchIcon className="text-neutral-400 w-5 h-5" />}</div>
+        <input
+          placeholder="Type / to search"
+          type="text"
+          onChange={event => debounced(event.target.value)}
+          defaultValue={searchParams?.toString()}
+          className="w-full bg-[#1e1e1e] pl-11  pr-4 py-3 rounded outline-none"
+          ref={ref}
+        />
       </div>
-      <input
-        placeholder="Type / to search"
-        type="text"
-        onChange={event => debounced(event.target.value)}
-        defaultValue={searchParams?.toString()}
-        className="w-full bg-[#1e1e1e] px-4 py-3 rounded outline-none"
-        ref={ref}
-      />
     </div>
   )
 }

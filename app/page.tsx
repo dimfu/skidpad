@@ -28,7 +28,7 @@ export default function Home() {
           <p className="text-neutral-400">Drift events calendar around the world</p>
           <div className="relative py-4 my-4 w-full border-t border-t-neutral-600">
             <Timezone />
-            <Search params={params} />
+            <Search isLoading={isLoading} params={params} />
             <PastFilter />
           </div>
         </section>
