@@ -13,7 +13,7 @@
     "lint-fetch": "pnpm lint:fix && pnpm fetch-events"
   },
   "dependencies": {
-    "@radix-ui/react-select": "^1.2.1",
+    "@radix-ui/react-select": "^1.2.2",
     "@radix-ui/react-switch": "^1.0.3",
     "@tanstack/react-query": "^4.29.11",
     "@types/node": "20.1.4",
