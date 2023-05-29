@@ -38,7 +38,7 @@ function EventSkeleton() {
 
 function EventItem({ event, details, actions, hide }: Props) {
   const { timezone } = useUserContext()
-  const isPastEvent = hide && moment.utc(event.schedule.at(-1)?.content.at(-1)?.time.split('–')[1]).tz(timezone).isBefore(moment())
+  const isPastEvent = hide && moment.utc(event.schedule.at(-1)?.content.at(-1)?.time.split('–')[1] || event.schedule.at(-1)?.content.at(-1)?.time || event.startDate).tz(timezone).isBefore(moment())
   return (
     <EventContext.Provider value={event}>
       <li className={clsx('relative w-full rounded-lg border border-neutral-700 bg-neutral-900 shadow', isPastEvent ? 'hidden' : 'block')} key={event.url}>
