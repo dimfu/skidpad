@@ -20,9 +20,9 @@ export function EventDetailsWrapper({ children }: { children: React.ReactNode })
 }
 
 export function EventName() {
-  const { name, schedule } = useEventItemContext()
+  const { name, schedule, startDate } = useEventItemContext()
   const { timezone } = useUserContext()
-  return <h1 className={clsx('font-semibold text-sm md:text-base', moment.utc(schedule.at(-1)?.content.at(-1)?.time.split('–')[1] || schedule.at(-1)?.content.at(-1)?.time).tz(timezone).isBefore(moment()) && 'line-through')}>{name}</h1>
+  return <h1 className={clsx('font-semibold text-sm md:text-base', moment.utc(schedule.at(-1)?.content.at(-1)?.time.split('–')[1] || schedule.at(-1)?.content.at(-1)?.time || startDate).tz(timezone).isBefore(moment()) && 'line-through')}>{name}</h1>
 }
 
 export function EventDetails() {

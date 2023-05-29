@@ -1,0 +1,116 @@
+[
+  {
+    "slug": "D1",
+    "name": "D1 GP/LT Okuibuki",
+    "location": "Okuibuki",
+    "round": "1-2",
+    "startDate": "2023-05-13T23:00:00Z",
+    "url": "https://d1gp.co.jp/11782/",
+    "schedule": [
+      {
+        "started_at": "2023-05-13T23:00:00Z",
+        "content": [
+          { "time": "2023-05-12T23:00:00Z", "program": "Gate open (allows entry to parking lot)" },
+          { "time": "2023-05-12T23:30:00Z", "program": "Opening of the venue and exhibition area" },
+          { "time": "2023-05-12T23:40:00Z", "program": "Race queen introduction & opening ceremony" },
+          { "time": "2023-05-12T00:20:00Z", "program": "D1GP Round 1 Tanso Final" },
+          { "time": "2023-05-13T03:00:00Z", "program": "D1LT Round 3 Tsuiso Tournament" },
+          { "time": "2023-05-13T05:45:00Z", "program": "Ceremony walk" },
+          { "time": "2023-05-13T06:15:00Z", "program": "D1GP Round 1 Tsuiso Tournament" },
+          { "time": "2023-05-13T08:45:00Z", "program": "D1GP Round 1 Awards Ceremony" },
+          { "time": "2023-05-13T09:00:00Z", "program": "D1LT Round 3 Awards Ceremony" },
+          { "time": "2023-05-13T09:30:00Z", "program": "Closed & Exhibit Area Closed" },
+          { "time": "2023-05-13T09:30:00Z", "program": "Gate Closed" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "D1",
+    "name": "D1 GP Tsukuba Round 3-4",
+    "location": "Tsukuba",
+    "round": "-",
+    "startDate": "2023-06-23T22:00:00Z",
+    "url": "https://d1gp.co.jp/category/gp/2023-d1gp/gp23-0304",
+    "schedule": []
+  },
+  {
+    "slug": "D1",
+    "name": "D1 GP/LT Ebisu",
+    "location": "Ebisu Circuit",
+    "round": "-",
+    "startDate": "2023-08-25T22:00:00Z",
+    "url": "https://d1gp.co.jp/category/gp/2023-d1gp/gp23-0506/",
+    "schedule": []
+  },
+  {
+    "slug": "D1",
+    "name": "D1 GP/LT Autopolis Round 7-8",
+    "location": "Autopolis",
+    "round": "-",
+    "startDate": "2023-10-27T22:00:00Z",
+    "url": "https://d1gp.co.jp/category/gp/2023-d1gp/gp23-0708/",
+    "schedule": []
+  },
+  {
+    "slug": "D1",
+    "name": "D1 GP/LT Odaiba Round 9-10",
+    "location": "Odaiba",
+    "round": "-",
+    "startDate": "2023-11-10T22:00:00Z",
+    "url": "https://d1gp.co.jp/category/gp/2023-d1gp/gp23-0910/",
+    "schedule": []
+  },
+  {
+    "slug": "D1",
+    "name": "D1 LT Meihan Round 1-2",
+    "location": "Meihan",
+    "round": "1-2",
+    "startDate": "2023-03-24T23:00:00Z",
+    "url": "https://d1gp.co.jp/11395/",
+    "schedule": [
+      {
+        "started_at": "2023-03-24T23:00:00Z",
+        "content": [
+          { "time": "2023-03-24T23:00:00Z", "program": "Gate open" },
+          { "time": "2023-03-24T23:15:00Z", "program": "Round 1 practice run" },
+          { "time": "2023-03-25T00:50:00Z", "program": "Round 1 Tanso final" },
+          { "time": "2023-03-25T04:20:00Z", "program": "Grid walk" },
+          { "time": "2023-03-25T04:40:00Z", "program": "Round 1 Tsuiso Tournament" },
+          { "time": "2023-03-25T06:40:00Z", "program": "Round 1 Award Ceremony" },
+          { "time": "2023-03-25T07:00:00Z", "program": "Gate closed" }
+        ]
+      },
+      {
+        "started_at": "2023-03-24T23:00:00Z",
+        "content": [
+          { "time": "2023-03-25T23:00:00Z", "program": "Gate open" },
+          { "time": "2023-03-25T23:15:00Z", "program": "Round 2 practice run" },
+          { "time": "2023-03-26T00:50:00Z", "program": "Round 2 Tanso final" },
+          { "time": "2023-03-26T04:20:00Z", "program": "Grid walk" },
+          { "time": "2023-03-26T04:40:00Z", "program": "Round 2 Tsuiso Tournament" },
+          { "time": "2023-03-26T06:40:00Z", "program": "Round 2 Award Ceremony" },
+          { "time": "2023-03-26T07:00:00Z", "program": "Gate closed" }
+        ]
+      }
+    ]
+  },
+{
+    "slug": "D1",
+    "name": "D1 LT Nikko Round 4-5",
+    "location": "Nikko",
+    "round": "4-5",
+    "startDate": "2023-07-07T22:00:00Z",
+    "url": "https://d1gp.co.jp/category/lights/2023-d1-lights/lt23-0405/",
+    "schedule": []
+  },
+ {
+    "slug": "D1",
+    "name": "D1 LT Bihoku Round 7-8",
+    "location": "Bihoku",
+    "round": "7-8",
+    "startDate": "2023-09-29T22:00:00Z",
+    "url": "https://d1gp.co.jp/category/lights/2023-d1-lights/lt23-0708/",
+    "schedule": []
+  } 
+]

@@ -17,8 +17,8 @@ export default function EventsContainer({ isLoading, events }: Props) {
         ? events
           ?.sort((a, b) => {
             const today = moment().tz(timezone)
-            const dateA = moment.utc(a.schedule.at(-1)?.content.at(-1)?.time.split('–')[1] || a.schedule.at(-1)?.content.at(-1)?.time).tz(timezone)
-            const dateB = moment.utc(b.schedule.at(-1)?.content.at(-1)?.time.split('–')[1] || b.schedule.at(-1)?.content.at(-1)?.time).tz(timezone)
+            const dateA = moment.utc(a.schedule.at(-1)?.content.at(-1)?.time.split('–')[1] || a.schedule.at(-1)?.content.at(-1)?.time || a.startDate).tz(timezone)
+            const dateB = moment.utc(b.schedule.at(-1)?.content.at(-1)?.time.split('–')[1] || b.schedule.at(-1)?.content.at(-1)?.time || b.startDate).tz(timezone)
 
             if (dateA.isBefore(today) && dateB.isBefore(today))
               return dateB.diff(dateA)
@@ -41,7 +41,7 @@ export default function EventsContainer({ isLoading, events }: Props) {
                 }
                 actions={
                   <React.Fragment>
-                    <EventItem.Schedule />
+                    <EventItem.Schedule/>
                     <EventItem.Link href={event.url}>
                       <span className="font-semibold">Learn More</span>
                     </EventItem.Link>
