@@ -25,6 +25,6 @@ function toSecond(hrtime: [number, number]): string {
 
   lzWorldTour().then(() => {
     const end = `${toSecond(process.hrtime(start))} seconds`
-    spinner.succeed(`Fetching Drift Masters EU Championship done in ${chalk.greenBright(end)}`)
+    spinner.succeed(`Fetching LZ World Tour done in ${chalk.greenBright(end)}`)
   }).catch(err => chalk.red(err))
 })()
