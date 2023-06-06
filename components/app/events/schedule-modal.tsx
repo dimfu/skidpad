@@ -82,10 +82,10 @@ function ScheduleModal({ showSchedule, setShowSchedule }: { showSchedule: boolea
                                 details: `${name} - more details: ${url}`,
                                 location,
                                 start: moment.utc(c.time.split('–')[0]).format('YYYYMMDD[T]HHmmss[Z]'),
-                                end: moment.utc(c.time.split('–')[1]).format('YYYYMMDD[T]HHmmss[Z]') || undefined,
+                                end: c.time.includes('–') ? moment.utc(c.time.split('–')[1]).format('YYYYMMDD[T]HHmmss[Z]') : lastProgramTime.utc().format('YYYYMMDD[T]HHmmss[Z]'),
                               })}
                             >
-                              <span className='hover:underline duration-200 transition-all'>Add to calendar</span>
+                              <span className="hover:underline duration-200 transition-all">Add to calendar</span>
                             </Link>
                           </div>
                         </li>
