@@ -31,8 +31,41 @@
     "location": "Tsukuba",
     "round": "-",
     "startDate": "2023-06-23T22:00:00Z",
-    "url": "https://d1gp.co.jp/category/gp/2023-d1gp/gp23-0304",
-    "schedule": []
+    "url": "https://d1gp.co.jp/12596/",
+    "schedule": [
+      {
+        "started_at": "2023-06-23T22:00:00Z",
+        "content": [
+          { "time": "2023-06-23T22:00:00Z", "program": "Gate open (allows entry to parking lot)" },
+          { "time": "2023-06-23T23:00:00Z", "program": "Opening of the venue and exhibition area" },
+          { "time": "2023-06-23T23:00:00Z", "program": "check running" },
+          { "time": "2023-06-24T00:10:00Z", "program": "Race queen introduction" },
+          { "time": "2023-06-24T00:25:00Z", "program": "Opening ceremony" },
+          { "time": "2023-06-24T00:55:00Z", "program": "Round 3 Tanso final" },
+          { "time": "2023-06-24T03:45:00Z", "program": "Ceremony before Tsuiso" },
+          { "time": "2023-06-24T04:00:00Z", "program": "Round 3 Tsuiso Tournament" },
+          { "time": "2023-06-24T06:30:00Z", "program": "Award Ceremony & Course Walk" },
+          { "time": "2023-06-24T07:30:00Z", "program": "Closed & Exhibit Area Closed" },
+          { "time": "2023-06-24T08:00:00Z", "program": "Gate closed" }
+        ]
+      },
+      {
+        "started_at": "2023-06-24T22:00:00Z",
+        "content": [
+          { "time": "2023-06-24T22:00:00Z", "program": "Gate open (allows entry to parking lot)" },
+          { "time": "2023-06-24T23:00:00Z", "program": "Opening of the venue and exhibition area" },
+          { "time": "2023-06-24T23:00:00Z", "program": "check running" },
+          { "time": "2023-06-25T00:10:00Z", "program": "Race queen introduction" },
+          { "time": "2023-06-25T00:25:00Z", "program": "Opening ceremony" },
+          { "time": "2023-06-25T00:55:00Z", "program": "Round 4 Tanso final" },
+          { "time": "2023-06-25T03:45:00Z", "program": "Ceremony before Tsuiso" },
+          { "time": "2023-06-25T04:00:00Z", "program": "Round 4 Tsuiso Tournament" },
+          { "time": "2023-06-25T06:30:00Z", "program": "Award Ceremony & Course Walk" },
+          { "time": "2023-06-25T07:30:00Z", "program": "Closed & Exhibit Area Closed" },
+          { "time": "2023-06-25T08:30:00Z", "program": "Gate closed" }
+        ]
+      }
+    ]
   },
   {
     "slug": "D1",
@@ -95,7 +128,7 @@
       }
     ]
   },
-{
+  {
     "slug": "D1",
     "name": "D1 LT Nikko Round 4-5",
     "location": "Nikko",
@@ -104,7 +137,7 @@
     "url": "https://d1gp.co.jp/category/lights/2023-d1-lights/lt23-0405/",
     "schedule": []
   },
- {
+  {
     "slug": "D1",
     "name": "D1 LT Bihoku Round 7-8",
     "location": "Bihoku",
@@ -112,5 +145,5 @@
     "startDate": "2023-09-29T22:00:00Z",
     "url": "https://d1gp.co.jp/category/lights/2023-d1-lights/lt23-0708/",
     "schedule": []
-  } 
+  }
 ]
