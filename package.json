@@ -27,6 +27,7 @@
     "eslint-config-next": "13.4.4",
     "framer-motion": "^10.12.16",
     "fuse.js": "^6.6.2",
+    "google-calendar-url": "^0.0.5",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.43",
     "next": "13.4.3",
