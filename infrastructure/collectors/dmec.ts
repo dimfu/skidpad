@@ -66,6 +66,7 @@ export default async function dmec() {
           startDate: schedules[0].content[0].time.split('–')[0],
           url: newUrl,
           schedule: schedules,
+          timezone,
         })
       }).catch(err => reject(err))
     }))

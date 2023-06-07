@@ -51,7 +51,7 @@ export default async function lzWorldTour() {
           .filter(schedule => schedule !== null)
           .get()
 
-        return { slug: 'LZ World Tour', name, location: location.length > 40 ? $$('h1').text() : location, round: location, startDate: schedules.length > 0 ? schedules[0].content[0].time : '', url, schedule: schedules }
+        return { slug: 'LZ World Tour', name, location: location.length > 40 ? $$('h1').text() : location, round: location, startDate: schedules.length > 0 ? schedules[0].content[0].time : '', url, schedule: schedules, timezone }
       })
       .get(),
   )
