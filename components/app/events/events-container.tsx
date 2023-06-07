@@ -8,6 +8,16 @@ interface Props {
   events: Event[] | undefined
 }
 
+export function EventsContainerSkeleton() {
+  return (
+    <ul className="flex flex-col items-center justify-between mt-[25px] space-y-4 pb-5 w-full lg:w-2/3">
+      {Array.from({ length: 8 }).map((_, id) => (
+        <EventSkeleton key={id} />
+      ))}
+    </ul>
+  )
+}
+
 export default function EventsContainer({ isLoading, events }: Props) {
   const { hidePastEvents } = useUserContext()
   return (
