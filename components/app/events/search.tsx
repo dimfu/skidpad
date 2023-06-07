@@ -6,6 +6,21 @@ import { createQueryString } from '@/libs/utils'
 import LoadingSpinner from '@/components/shared/icons/loading-spinner/loading-spinner'
 import SearchIcon from '@/components/shared/icons/search'
 
+export function SearchSkeleton() {
+  return (
+    <div className="mt-4 pt-4 border-t border-neutral-600">
+      <div className="relative">
+        <div className="absolute inset-y-0 left-0 flex items-center pl-4"><LoadingSpinner /></div>
+        <input
+          placeholder="Type / to search"
+          type="text"
+          className="w-full bg-[#1e1e1e] pl-11  pr-4 py-3 rounded outline-none"
+        />
+      </div>
+    </div>
+  )
+}
+
 export default function Search({ params, isLoading }: { params: ReadonlyURLSearchParams; isLoading: boolean }) {
   const router = useRouter()
   const pathname = usePathname()

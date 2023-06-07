@@ -8,6 +8,7 @@ import Wrapper from '@/components/shared/wrapper'
 import { TimezoneSkeleton } from '@/components/app/events/timezone'
 import type { Event } from '@/infrastructure/event'
 import { EventsContainerSkeleton } from '@/components/app/events/events-container'
+import { SearchSkeleton } from '@/components/app/events/search'
 
 const Timezone = dynamic(() => import('@/components/app/events/timezone'), {
   loading: () => <TimezoneSkeleton />,
@@ -15,12 +16,16 @@ const Timezone = dynamic(() => import('@/components/app/events/timezone'), {
 })
 
 const Search = dynamic(() => import('@/components/app/events/search'), {
-  loading: () => null,
+  loading: () => <SearchSkeleton />,
   ssr: false,
 })
 
 const PastFilter = dynamic(() => import('@/components/app/events/past-filter'), {
-  loading: () => null,
+  loading: () => (
+    <div className="flex items-center justify-between mt-4 py-4 border-t border-t-neutral-600">
+      <label className="text-sm text-neutral-400">Hide past events</label>
+    </div>
+  ),
   ssr: false,
 })
 
