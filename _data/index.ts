@@ -37,8 +37,8 @@ export const schema: EventSchema[] = sortSoonFirst.map((event) => {
     url: event.url,
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
-    startDate: event.startDate,
-    endDate: event.schedule.at(-1)?.content.at(-1)?.time.split('–')[0] || moment.utc(event.startDate).endOf('day').format(),
+    startDate: moment.utc(event.startDate).tz(event.timezone)?.toISOString(),
+    endDate: event.schedule.at(-1)?.content.at(-1)?.time.includes('–') ? moment.utc(event.schedule.at(-1)?.content.at(-1)?.time.split('–')[1]).tz(event.timezone)?.toISOString() : moment.utc(event.startDate).tz(event.timezone)?.endOf('day')?.toISOString(),
     location: {
       "@type": 'Place',
       name: event.location

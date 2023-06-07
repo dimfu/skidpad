@@ -10,7 +10,6 @@ const currentYear = new Date().getFullYear()
 export const metadata: Metadata = {
   title: `Upcoming - Drift events Calendar ${currentYear}`,
   description: 'The most comprehensive list of drift events across the world.',
-
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
