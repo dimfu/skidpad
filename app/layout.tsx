@@ -4,7 +4,6 @@ import clsx from 'clsx'
 import type { Metadata } from 'next'
 import Providers from '@/components/shared/providers'
 
-const inter = Inter({ variable: '--font-inter', subsets: ['latin'] })
 const currentYear = new Date().getFullYear()
 
 export const metadata: Metadata = {
@@ -13,12 +12,14 @@ export const metadata: Metadata = {
   verification: { google: 'T5NAcAjBEPXTM3ihHp0qjfSbUIJ9Sz9aGqjkGY5ILhY' },
 }
 
+const inter = Inter({ variable: '--font-inter', subsets: ['latin'] })
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <Providers>
-        <body className={clsx(inter.variable)}>{children}</body>
-      </Providers>
+      <body className={clsx(inter.variable)}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }
