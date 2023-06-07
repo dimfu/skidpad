@@ -17,7 +17,7 @@ export default async function lzWorldTour() {
   const $ = cheerio.load(await source.text())
 
   const LOCATION_TO_CHANGE: LocationList = {
-    Kildare: 'Cill dara',
+    'mondello-park': 'Cill dara',
   }
 
   const events: Event[] = await Promise.all(
@@ -29,7 +29,7 @@ export default async function lzWorldTour() {
 
         const name = `${$$('h1').text()} - LZ World Tour`
         const location = $$('#be-content > div:first-child > div:first-child > div > div > div:first-child > div > div p:eq(0)').text().split(',')[0]
-        const getTimezone = await fetch(`https://api.api-ninjas.com/v1/timezone?city=${LOCATION_TO_CHANGE[location] || location}`, {
+        const getTimezone = await fetch(`https://api.api-ninjas.com/v1/timezone?city=${LOCATION_TO_CHANGE[url.split('/').slice(-2, -1)[0]] || location}`, {
           headers: { 'X-Api-Key': process.env.API_NINJAS_API_KEY as string },
         })
         const timezone = (await getTimezone.json()).timezone
@@ -51,7 +51,7 @@ export default async function lzWorldTour() {
           .filter(schedule => schedule !== null)
           .get()
 
-        return { slug: 'LZ World Tour', name, location: location.length > 40 ? $$('h1').text() : location, round: location, startDate: schedules.length > 0 ? schedules[0].content[0].time : '', url, schedule: schedules }
+        return { slug: 'LZ World Tour', name, location: location.length > 40 ? $$('h1').text() : location, round: location, startDate: schedules.length > 0 ? schedules[0].content[0].time : '', url, schedule: schedules, timezone }
       })
       .get(),
   )

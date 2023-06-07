@@ -12,4 +12,5 @@ export interface Event {
       program: string
     }[]
   }[]
+  timezone: string
 }

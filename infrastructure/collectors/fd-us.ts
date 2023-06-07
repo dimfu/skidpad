@@ -48,6 +48,7 @@ export default async function fdUs() {
       startDate: schedules[0]?.content[0].time.split('–')[0],
       url,
       schedule: schedules,
+      timezone,
     }
   }).get(),
   )

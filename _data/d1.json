@@ -1,6 +1,7 @@
 [
   {
     "slug": "D1",
+    "timezone": "Asia/Tokyo",
     "name": "D1 GP/LT Okuibuki",
     "location": "Okuibuki",
     "round": "1-2",
@@ -27,6 +28,7 @@
   },
   {
     "slug": "D1",
+    "timezone": "Asia/Tokyo",
     "name": "D1 GP Tsukuba Round 3-4",
     "location": "Tsukuba",
     "round": "-",
@@ -69,6 +71,7 @@
   },
   {
     "slug": "D1",
+    "timezone": "Asia/Tokyo",
     "name": "D1 GP/LT Ebisu",
     "location": "Ebisu Circuit",
     "round": "-",
@@ -78,6 +81,7 @@
   },
   {
     "slug": "D1",
+    "timezone": "Asia/Tokyo",
     "name": "D1 GP/LT Autopolis Round 7-8",
     "location": "Autopolis",
     "round": "-",
@@ -87,6 +91,7 @@
   },
   {
     "slug": "D1",
+    "timezone": "Asia/Tokyo",
     "name": "D1 GP/LT Odaiba Round 9-10",
     "location": "Odaiba",
     "round": "-",
@@ -96,6 +101,7 @@
   },
   {
     "slug": "D1",
+    "timezone": "Asia/Tokyo",
     "name": "D1 LT Meihan Round 1-2",
     "location": "Meihan",
     "round": "1-2",
@@ -130,6 +136,7 @@
   },
   {
     "slug": "D1",
+    "timezone": "Asia/Tokyo",
     "name": "D1 LT Nikko Round 4-5",
     "location": "Nikko",
     "round": "4-5",
@@ -139,6 +146,7 @@
   },
   {
     "slug": "D1",
+    "timezone": "Asia/Tokyo",
     "name": "D1 LT Bihoku Round 7-8",
     "location": "Bihoku",
     "round": "7-8",

@@ -10,6 +10,7 @@ import { TimezoneSkeleton } from '@/components/app/events/timezone'
 import PastFilter from '@/components/app/events/past-filter'
 import type { Event } from '@/infrastructure/event'
 import Search from '@/components/app/events/search'
+import { schema } from '@/_data'
 
 const Timezone = dynamic(() => import('@/components/app/events/timezone'), {
   loading: () => <TimezoneSkeleton />,
@@ -34,6 +35,7 @@ export default function Home() {
         </section>
         <EventsContainer isLoading={isLoading} events={data} />
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     </Wrapper>
   )
 }
