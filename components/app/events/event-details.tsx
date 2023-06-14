@@ -22,7 +22,7 @@ export function EventDetailsWrapper({ children }: { children: React.ReactNode })
 export function EventName() {
   const { name, schedule, startDate } = useEventItemContext()
   const { timezone } = useUserContext()
-  return <h1 className={clsx('font-semibold text-sm md:text-base', moment.utc(schedule.at(-1)?.content.at(-1)?.time.split('–')[1] || schedule.at(-1)?.content.at(-1)?.time || startDate).tz(timezone).isBefore(moment()) && 'line-through')}>{name}</h1>
+  return <h3 className={clsx('font-semibold text-sm md:text-base', moment.utc(schedule.at(-1)?.content.at(-1)?.time.split('–')[1] || schedule.at(-1)?.content.at(-1)?.time || startDate).tz(timezone).isBefore(moment()) && 'line-through')}>{name}</h3>
 }
 
 export function EventDetails() {
@@ -30,10 +30,10 @@ export function EventDetails() {
   const { timezone } = useUserContext()
   return (
     <div className="mt-1 flex flex-col md:flex-row md:items-center md:space-x-3">
-      <span className="flex items-center space-x-2 text-neutral-400 text-xs">
+      <span className="flex items-center space-x-1 text-neutral-400 text-xs">
         <Location className="w-3 h-3" /> <p>{location}</p>
       </span>
-      <span className="flex items-center space-x-2 text-neutral-400 text-xs">
+      <span className="flex items-center space-x-1 text-neutral-400 text-xs">
         <Calendar className="w-3 h-3" /> <p>{startDate ? moment.utc(startDate).tz(timezone).format('ddd, Do MMM, h:mmA') : 'Coming Soon'}</p>
       </span>
     </div>

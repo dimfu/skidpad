@@ -43,7 +43,7 @@ export default function Events({ events }: { events: Event[] | undefined }) {
       <div className="mt-[75px] px-4 md:px-4 flex flex-col lg:flex-row justify-between w-full mx-auto relative gap-x-[50px]">
         <section className="w-full lg:w-[280px] lg:sticky top-[100px] self-start">
           <h1 className="font-semibold text-2xl">Skidpad</h1>
-          <p className="text-neutral-400">Drift events calendar around the world</p>
+          <h2 className="text-neutral-400">The most comprehensive list of drift events across the world.</h2>
           <div className="relative py-4 my-4 w-full border-t border-t-neutral-600">
             <Timezone />
             <Search isLoading={isLoading} params={params} />

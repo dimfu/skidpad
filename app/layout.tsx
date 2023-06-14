@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: `Upcoming - Drift events Calendar ${currentYear}`,
   description: 'The most comprehensive list of drift events across the world.',
   verification: { google: 'T5NAcAjBEPXTM3ihHp0qjfSbUIJ9Sz9aGqjkGY5ILhY' },
+  openGraph: { siteName: 'Skidpad', type: 'website', url: 'https://skidpad.vercel.app/', description: 'The most comprehensive list of drift events across the world', title: 'Drift events calendar around the world - Skidpad' },
 }
 
 const inter = Inter({ variable: '--font-inter', subsets: ['latin'] })

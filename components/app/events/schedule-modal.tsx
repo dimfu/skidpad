@@ -18,7 +18,7 @@ function ScheduleModal({ showSchedule, setShowSchedule }: { showSchedule: boolea
     <Modal showModal={showSchedule} setShowModal={setShowSchedule}>
       <div className="relative max-h-[min(906px,_90vh)] shadow-xl md:max-w-screen-sm w-full bg-neutral-800 overflow-auto md:rounded-2xl md:border md:border-neutral-600">
         <div className="px-4 pb-4 md:pt-4 border-b border-neutral-700">
-          <h1 className="font-semibold text-xl text-white">Schedule</h1>
+          <h5 className="font-semibold text-xl text-white">Schedule</h5>
           <span>{schedule.length} day(s) event</span>
         </div>
         <div className="px-4 relative min-h-[calc(4.2rem*2)]">
