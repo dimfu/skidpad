@@ -44,7 +44,7 @@
     "@types/body-scroll-lock": "^3.1.0",
     "chalk": "^4.1.1",
     "cheerio": "1.0.0-rc.12",
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.3.1",
     "lint-staged": "^13.2.2",
     "ora": "^5.4.1",
     "simple-git-hooks": "^2.8.1",
