@@ -56,5 +56,5 @@ export default async function lzWorldTour() {
       .get(),
   )
   const removeNoSchedules = events.filter(event => event.schedule.length > 0)
-  fs.writeFileSync(path.resolve(__dirname, '../../_data/lz-worldtour.json'), JSON.stringify(removeNoSchedules))
+  fs.writeFileSync(path.resolve(__dirname, '../../_data/generated/lz-worldtour.json'), JSON.stringify(removeNoSchedules))
 }

@@ -75,7 +75,7 @@ export default async function dmec() {
   try {
     // Filter because if events not yet announched it will return undefined
     const results = (await Promise.all(promises)).filter(item => Object.keys(item).length > 0)
-    fs.writeFileSync(path.resolve(__dirname, '../../_data/dmec.json'), JSON.stringify(results))
+    fs.writeFileSync(path.resolve(__dirname, '../../_data/generated/dmec.json'), JSON.stringify(results))
   }
   catch (err) {
     throw new Error(err as string)

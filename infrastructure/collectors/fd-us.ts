@@ -55,5 +55,5 @@ export default async function fdUs() {
 
   const removeNoSchedules = events.filter(event => event.schedule.length > 0)
 
-  fs.writeFileSync(path.resolve(__dirname, '../../_data/fd-us.json'), JSON.stringify(removeNoSchedules))
+  fs.writeFileSync(path.resolve(__dirname, '../../_data/generated/fd-us.json'), JSON.stringify(removeNoSchedules))
 }
