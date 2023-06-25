@@ -2,9 +2,9 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import Fuse from 'fuse.js'
 import type { Event } from '@/infrastructure/event'
 
-import fdUs from '@/_data/fd-us.json'
-import dmec from '@/_data/dmec.json'
-import lzWorldTour from '@/_data/lz-worldtour.json'
+import fdUs from '@/_data/generated/fd-us.json'
+import dmec from '@/_data/generated/dmec.json'
+import lzWorldTour from '@/_data/generated/lz-worldtour.json'
 import { d1 } from '@/_data'
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
