@@ -2,8 +2,8 @@ import type { SetStateAction } from 'react'
 import React from 'react'
 import moment from 'moment-timezone'
 import clsx from 'clsx'
-import { googleCalendarEventUrl } from 'google-calendar-url'
-import Link from 'next/link'
+
+// import { googleCalendarEventUrl } from 'google-calendar-url'
 import { useEventItemContext } from './context'
 import Modal from '@/components/shared/modal'
 import { useUserContext } from '@/components/shared/providers/user-context'
@@ -75,7 +75,7 @@ function ScheduleModal({ showSchedule, setShowSchedule }: { showSchedule: boolea
                                   .join(' - ')}
                               </span>
                             </div>
-                            <Link
+                            {/* <Link
                               target="_blank"
                               href={googleCalendarEventUrl({
                                 title: `${slug} - ${c.program}`,
@@ -86,7 +86,7 @@ function ScheduleModal({ showSchedule, setShowSchedule }: { showSchedule: boolea
                               })}
                             >
                               <span className="hover:underline duration-200 transition-all">Add to calendar</span>
-                            </Link>
+                            </Link> */}
                           </div>
                         </li>
                       )

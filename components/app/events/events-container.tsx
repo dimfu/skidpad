@@ -39,25 +39,25 @@ export default function EventsContainer({ isLoading, events }: Props) {
             else return dateA.diff(dateB)
           })
           .map(event => (
-              <EventItem
-                key={event.url}
-                event={event}
-                hide={hidePastEvents}
-                details={
-                  <EventItem.EventDetailsWrapper>
-                    <EventItem.Name />
-                    <EventItem.Details />
-                  </EventItem.EventDetailsWrapper>
-                }
-                actions={
-                  <React.Fragment>
-                    <EventItem.Schedule />
-                    <EventItem.Link href={event.url}>
-                      <span className="font-semibold">Learn More</span>
-                    </EventItem.Link>
-                  </React.Fragment>
-                }
-              />
+            <EventItem
+              key={event.url}
+              event={event}
+              hide={hidePastEvents}
+              details={
+                <EventItem.EventDetailsWrapper>
+                  <EventItem.Name />
+                  <EventItem.Details />
+                </EventItem.EventDetailsWrapper>
+              }
+              actions={
+                <React.Fragment>
+                  <EventItem.Schedule />
+                  <EventItem.Link href={event.url}>
+                    <span className="font-semibold">Learn More</span>
+                  </EventItem.Link>
+                </React.Fragment>
+              }
+            />
           ))
         : Array.from({ length: 8 }).map((_, id) => <EventSkeleton key={id} />)}
     </ul>
