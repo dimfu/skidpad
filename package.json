@@ -30,7 +30,7 @@
     "google-calendar-url": "^0.0.5",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.43",
-    "next": "13.4.7",
+    "next": "13.4.12",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
