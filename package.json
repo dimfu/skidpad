@@ -25,7 +25,7 @@
     "countries-and-timezones": "^3.5.1",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
-    "framer-motion": "^10.12.16",
+    "framer-motion": "^10.15.0",
     "fuse.js": "^6.6.2",
     "google-calendar-url": "^0.0.5",
     "moment": "^2.29.4",
