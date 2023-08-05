@@ -21,7 +21,7 @@
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
     "body-scroll-lock": "4.0.0-beta.0",
-    "clsx": "^1.2.1",
+    "clsx": "^2.0.0",
     "countries-and-timezones": "^3.5.1",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
