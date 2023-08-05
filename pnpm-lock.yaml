@@ -33,8 +33,8 @@ dependencies:
     specifier: ^1.2.1
     version: 1.2.1
   countries-and-timezones:
-    specifier: ^3.4.1
-    version: 3.4.1
+    specifier: ^3.5.1
+    version: 3.5.1
   eslint:
     specifier: 8.43.0
     version: 8.43.0
@@ -1640,8 +1640,8 @@ packages:
   /concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
-  /countries-and-timezones@3.4.1:
-    resolution: {integrity: sha512-INeHGCony4XUUR8iGL/lmt9s1Oi+n+gFHeJAMfbV5hJfYeDOB8JG1oxz5xFQu5oBZoRCJe/87k1Vzue9DoIauA==}
+  /countries-and-timezones@3.5.1:
+    resolution: {integrity: sha512-DlsW+qxiJI6HJ83Yjjmuokgul3KKs0BmraPigFZ1sjWHPZcOTJ0LwB5iewZT9wsMAbmgGSVUdY4nZ4JnHD6NBQ==}
     engines: {node: '>=8.x', npm: '>=5.x'}
     dev: false
 
