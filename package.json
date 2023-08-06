@@ -47,7 +47,7 @@
     "dotenv": "^16.3.1",
     "lint-staged": "^13.2.3",
     "ora": "^5.4.1",
-    "simple-git-hooks": "^2.8.1",
+    "simple-git-hooks": "^2.9.0",
     "ts-node": "^10.9.1"
   },
   "simple-git-hooks": {
